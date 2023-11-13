@@ -39,7 +39,6 @@ p {
   margin: 40px 0;
 }
 
-
 button.normal {
   font-size: 14px;
   font-weight: 600px;
@@ -577,7 +576,6 @@ span {
   padding: 75px;
   background-color: #ececec;
 }
-
 #footer p, #footer a{
   color: rgb(109, 109, 109);
   text-decoration: none;
