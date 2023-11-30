@@ -415,7 +415,7 @@ button:hover {
 /* off banner section styles */
 
 #off-banner {
-  background-image: url(assets/images/banner/b2.jpg);
+  background-image: url(./assets/images/banner/b2.jpg);
   background-size: cover;
   width: 100%;
   height: 40vh;
