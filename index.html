@@ -12,35 +12,30 @@
     ></script>
     <link rel="icon" type="image/png" href="assets/images/favicon.jpg">
   </head>
-  <body>
     <!--header section-->
-    <style>
-
-      
-    </style>
-  </head>
-  <body>
-  
      <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <h2>Keranjang Booking</h2>
       <div id="cart-content"></div>
     </div>
-  
+  <body>
     <div id="main">
       <header>
         <div id="header">
           <div class="header-logo">
-            <a href="index.html"><img src="assets/images/logo.png" alt="" /></a>
+            <a href="index.html"><img src="assets/images/logo.png" alt="image" /></a>
           </div>
+          <input type="checkbox" id="check">
+          <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+          </label>
           <div class="header-list">
             <nav class="header-list-nav">
-              <ul>
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="Trip.html">Trip</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+              <ul class="navbar-nav">
+                <li class="nav-item"><a href="#product-section" class="nav-link">Trip</a></li>
+                <li class="nav-item"><a href="#banners" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">Contact Us</a></li>
               </ul>
             </nav>
             <div class="header-list-icon" id="tombol-keranjang" onclick="toggleNav()">
@@ -93,6 +88,7 @@
       </section>
 
       <section class="product-section section-p1" id="product-section">
+        <br>
         <h1>Paket Perjalanan</h1>
         <p>Berlaku Khusus untuk Bulan ini</p>
         <div class="pro-collection">
@@ -274,7 +270,7 @@
             <a ><i class="fa-brands fa-twitter"></i></a>
           </div>
         </div>
-        <div class="about">
+        <div class="about" id="about">
           <h3>About</h3>
           <br> 
           <a >About Us</a>

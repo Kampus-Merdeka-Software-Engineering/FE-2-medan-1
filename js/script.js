@@ -12,6 +12,11 @@ function toggleNavResponsive() {
     closeNav();
   }
 }
+// Script JavaScript untuk toggle menu di tampilan mobile
+document.getElementById('check').addEventListener('change', function() {
+  const headerListNav = document.querySelector('.header-list-nav ul');
+  headerListNav.classList.toggle('active');
+});
 
 
 
@@ -132,8 +137,8 @@ function calculateTotal() {
 
 // Fungsi untuk menampilkan sidenav
 function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginRight = "250px";
+  document.getElementById("mySidenav").style.width = "360px";
+  document.getElementById("main").style.marginRight = "350px";
   displayCart(); // Menampilkan isi keranjang saat sidenav dibuka
 }
 
