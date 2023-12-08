@@ -23,7 +23,7 @@ document.getElementById('check').addEventListener('change', function() {
 // header Product cart
 var cart = [];
 // Fungsi untuk menampilkan dan mengupdate isi keranjang di sidenav
-function displayCart() {}
+function displayCart() {
   var cartContent = document.getElementById("cart-content");
   cartContent.innerHTML = ""; // Membersihkan konten sebelum menambahkannya kembali
 
@@ -132,8 +132,8 @@ payNowButton.onclick = function () {
       console.error("Error making POST request:", error);
       alert("Terjadi kesalahan. Silakan coba lagi nanti.");
     });
-};
-
+  };
+}
 // Fungsi untuk menghitung total jumlah produk di keranjang
 function calculateTotalQuantity() {
   var totalQuantity = 0;
