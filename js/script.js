@@ -56,7 +56,7 @@ function displayCart() {
     `;
     cartContent.appendChild(productItem);
   }
-
+}
   // Menampilkan total harga di bawah isi keranjang
   var totalElement = document.createElement("p");
   var totalAmount = calculateTotal().toLocaleString();
@@ -232,15 +232,15 @@ function displayCart() {
     document.getElementById("main").style.marginRight = "0";
   }
  }
-}
+
 // Fungsi untuk membuka atau menutup sidenav sesuai kondisi
 function toggleNav() {
   var sidenavWidth = document.getElementById("mySidenav").style.width;
-  if (sidenavWidth === "0px" || sidenavWidth === "") {
-    openNav();
-  } else {
-    closeNav();
-  }
+    if (sidenavWidth === "0px" || sidenavWidth === "") {
+      openNav();
+    } else {
+      closeNav();
+    }
 }
 
 
