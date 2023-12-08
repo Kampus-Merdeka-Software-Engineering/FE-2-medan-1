@@ -82,11 +82,58 @@ function displayCart() {
   var payNowButton = document.createElement("button");
   payNowButton.textContent = "Pesan Sekarang";
   payNowButton.onclick = function() {
-    // Tambahkan logika pembayaran atau pengiriman data formulir ke server di sini (IWAA)
-    alert("Pembayaran berhasil! Terima kasih!");
-    // Setelah pembayaran berhasil, mereset keranjang atau melakukan tindakan lainnya.
-    // Misalnya, cart = [];
-    // displayCart();
+     // Mendapatkan data formulir
+     var name = document.getElementById("name").value;
+     var email = document.getElementById("email").value;
+     var phone = document.getElementById("phone").value;
+     var bookingDate = document.getElementById("bookingDate").value;
+ 
+     // Cek apakah ada produk di keranjang
+     if (cart.length === 0) {
+       alert("Keranjang kosong. Tambahkan produk ke keranjang terlebih dahulu.");
+       return;
+     }
+ 
+     // Cek apakah semua data formulir sudah diisi
+     if (!name || !email || !phone || !bookingDate) {
+       alert("Harap isi semua kolom formulir dengan benar.");
+       return;
+     }
+ 
+     // Data yang akan dikirim ke server
+     var bookingData = {
+       name: name,
+       email: email,
+       telepon: phone,
+       dateAt: bookingDate,
+       quantity: calculateTotalQuantity(), // Fungsi calculateTotalQuantity() untuk menghitung total jumlah produk
+       totalPrice: calculateTotal(), // Fungsi calculateTotal() untuk menghitung total harga produk
+     };
+ 
+     // Menggunakan metode fetch untuk melakukan permintaan POST ke API
+     fetch("https://be-2-medan-1-production.up.railway.app/booking", {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify(bookingData),
+     })
+       .then((response) => response.json())
+       .then((data) => {
+         // Menanggapi respons dari server
+         if (data.success) {
+           alert("Booking berhasil! Terima kasih!");
+           // Setelah Booking berhasil, mereset keranjang atau melakukan tindakan lainnya.
+           cart = [];
+           displayCart();
+         } else {
+           alert("Booking gagal. Silakan coba lagi.");
+         }
+       })
+       .catch((error) => {
+         console.error("Error making POST request:", error);
+         alert("Terjadi kesalahan. Silakan coba lagi nanti.");
+       });
   };
   cartContent.appendChild(payNowButton);
 }
