@@ -93,40 +93,40 @@ function displayCart() {
 
   cartContent.innerHTML += formHTML;
   // Fungsi untuk menambahkan produk ke dalam keranjang
-function addToCart(name, price, productId) {
-  // Cek apakah produk sudah ada di keranjang
-  var existingProduct = cart.find(product => product.name === name);
-  
-  if (existingProduct) {
-    // Jika produk sudah ada, tambahkan jumlahnya
-    existingProduct.quantity += 1;
-  } else {
-    // Jika produk belum ada, tambahkan ke keranjang
-    cart.push({ name: name, price: price, quantity: 1 });
-  }
+  function addToCart(name, price, productId) {
+    // Cek apakah produk sudah ada di keranjang
+    var existingProduct = cart.find(product => product.name === name);
+    
+    if (existingProduct) {
+      // Jika produk sudah ada, tambahkan jumlahnya
+      existingProduct.quantity += 1;
+    } else {
+      // Jika produk belum ada, tambahkan ke keranjang
+      cart.push({ name: name, price: price, quantity: 1 });
+    }
 
   displayCart(); // Memanggil fungsi displayCart() setelah menambahkan produk
-}
+  } 
 
-// Fungsi untuk mengurangi jumlah produk di keranjang
-function decreaseQuantity(index) {
-  if (cart[index].quantity > 1) {
-    cart[index].quantity -= 1;
-    displayCart(); // Memanggil fungsi displayCart() setelah mengurangi jumlah produk
+  // Fungsi untuk mengurangi jumlah produk di keranjang
+  function decreaseQuantity(index) {
+    if (cart[index].quantity > 1) {
+      cart[index].quantity -= 1;
+      displayCart(); // Memanggil fungsi displayCart() setelah mengurangi jumlah produk
+    }
   }
-}
 
-// Fungsi untuk menambah jumlah produk di keranjang
-function increaseQuantity(index) {
-  cart[index].quantity += 1;
-  displayCart(); // Memanggil fungsi displayCart() setelah menambah jumlah produk
-}
+  // Fungsi untuk menambah jumlah produk di keranjang
+  function increaseQuantity(index) {
+    cart[index].quantity += 1;
+    displayCart(); // Memanggil fungsi displayCart() setelah menambah jumlah produk
+  }
 
-// Fungsi untuk menghapus produk dari keranjang
-function removeFromCart(index) {
-  cart.splice(index, 1);
-  displayCart(); // Memanggil fungsi displayCart() setelah menghapus produk
-}
+  // Fungsi untuk menghapus produk dari keranjang
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    displayCart(); // Memanggil fungsi displayCart() setelah menghapus produk
+  }
   // Tombol "Bayar Sekarang" dengan fungsi onClick
   var payNowButton = document.createElement("button");
   payNowButton.textContent = "Pesan Sekarang";
@@ -184,40 +184,40 @@ function removeFromCart(index) {
         alert("Terjadi kesalahan. Silakan coba lagi nanti.");
       });
       // Fungsi untuk menambahkan produk ke dalam keranjang
-function addToCart(name, price, productId) {
-  // Cek apakah produk sudah ada di keranjang
-  var existingProduct = cart.find(product => product.name === name);
-  
-  if (existingProduct) {
-    // Jika produk sudah ada, tambahkan jumlahnya
-    existingProduct.quantity += 1;
-  } else {
-    // Jika produk belum ada, tambahkan ke keranjang
-    cart.push({ name: name, price: price, quantity: 1 });
-  }
+  function addToCart(name, price, productId) {
+    // Cek apakah produk sudah ada di keranjang
+    var existingProduct = cart.find(product => product.name === name);
+    
+    if (existingProduct) {
+      // Jika produk sudah ada, tambahkan jumlahnya
+      existingProduct.quantity += 1;
+    } else {
+      // Jika produk belum ada, tambahkan ke keranjang
+      cart.push({ name: name, price: price, quantity: 1 });
+    }
 
   displayCart(); // Memanggil fungsi displayCart() setelah menambahkan produk
-}
-
-// Fungsi untuk mengurangi jumlah produk di keranjang
-function decreaseQuantity(index) {
-  if (cart[index].quantity > 1) {
-    cart[index].quantity -= 1;
-    displayCart(); // Memanggil fungsi displayCart() setelah mengurangi jumlah produk
   }
-}
 
-// Fungsi untuk menambah jumlah produk di keranjang
-function increaseQuantity(index) {
-  cart[index].quantity += 1;
-  displayCart(); // Memanggil fungsi displayCart() setelah menambah jumlah produk
-}
+  // Fungsi untuk mengurangi jumlah produk di keranjang
+  function decreaseQuantity(index) {
+    if (cart[index].quantity > 1) {
+      cart[index].quantity -= 1;
+      displayCart(); // Memanggil fungsi displayCart() setelah mengurangi jumlah produk
+    }
+  }
 
-// Fungsi untuk menghapus produk dari keranjang
-function removeFromCart(index) {
-  cart.splice(index, 1);
-  displayCart(); // Memanggil fungsi displayCart() setelah menghapus produk
-  };
+  // Fungsi untuk menambah jumlah produk di keranjang
+  function increaseQuantity(index) {
+    cart[index].quantity += 1;
+    displayCart(); // Memanggil fungsi displayCart() setelah menambah jumlah produk
+  }
+
+  // Fungsi untuk menghapus produk dari keranjang
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    displayCart(); // Memanggil fungsi displayCart() setelah menghapus produk
+    };
 
   // Fungsi untuk menampilkan sidenav
   function openNav() {
@@ -231,8 +231,8 @@ function removeFromCart(index) {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginRight = "0";
   }
+ }
 }
-
 // Fungsi untuk membuka atau menutup sidenav sesuai kondisi
 function toggleNav() {
   var sidenavWidth = document.getElementById("mySidenav").style.width;
