@@ -122,7 +122,7 @@ function displayCart() {
        dateAt: bookingDate,
        quantity: calculateTotalQuantity(), // Fungsi calculateTotalQuantity() untuk menghitung total jumlah produk
        totalPrice: calculateTotal(), // Fungsi calculateTotal() untuk menghitung total harga produk
-       productNames: productNames.join(", "), // Menyatukan nama-nama produk menjadi satu string
+       productName: productNames.join(", "), // Menyatukan nama-nama produk menjadi satu string
       };
  
      // Menggunakan metode fetch untuk melakukan permintaan POST ke API
