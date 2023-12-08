@@ -142,31 +142,31 @@ function displayCart() {
     }
     return totalQuantity;
   }
+}
 
-
-  // Fungsi untuk menampilkan sidenav
-  function openNav() {
+// Fungsi untuk menampilkan sidenav
+function openNav() {
     document.getElementById("mySidenav").style.width = "360px";
     document.getElementById("main").style.marginRight = "350px";
     displayCart(); // Menampilkan isi keranjang saat sidenav dibuka
-  }
+}
 
-  // Fungsi untuk menutup sidenav
-  function closeNav() {
+// Fungsi untuk menutup sidenav
+function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginRight = "0";
-  }
+}
 
-  // Fungsi untuk membuka atau menutup sidenav sesuai kondisi
-  function toggleNav() {
+// Fungsi untuk membuka atau menutup sidenav sesuai kondisi
+function toggleNav() {
     var sidenavWidth = document.getElementById("mySidenav").style.width;
     if (sidenavWidth === "0px" || sidenavWidth === "") {
       openNav();
     } else {
       closeNav();
     }
-  }
-}  
+}
+
 // Paket Rekomendasi Untuk ditampilkan
 document.addEventListener('DOMContentLoaded', function () {
   // URL API
