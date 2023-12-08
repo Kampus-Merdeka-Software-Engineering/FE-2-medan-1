@@ -1,4 +1,4 @@
-// focus the cursor on the email-address input
+// tes focus the cursor on the email-address input
 const emailField = document.getElementById("email-address-input");
 emailField.focus({
   preventScroll: true,
@@ -22,6 +22,7 @@ document.getElementById('check').addEventListener('change', function() {
 
 // header Product cart
 var cart = [];
+
 // Fungsi untuk menampilkan dan mengupdate isi keranjang di sidenav
 function displayCart() {
   var cartContent = document.getElementById("cart-content");
@@ -48,90 +49,90 @@ function displayCart() {
 
   // Menambahkan formulir Nama, Email, dan Nomor Telepon di bawah total
   var formHTML = `
-  <div class="customer-form">
-    <table>
+    <div class="customer-form">
+      <table>
         <thead>
-            <tr>
-                <th>Nama</th>
-                <th><input type="text" id="name" placeholder="Masukkan nama"></th>
-            </tr>
+          <tr>
+            <th>Nama</th>
+            <th><input type="text" id="name" placeholder="Masukkan nama"></th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Email</td>
-                <td><input type="email" id="email" placeholder="Masukkan email"></td>
-            </tr>
-            <tr>
-                <td>Telp.</td>
-                <td><input type="tel" id="phone" placeholder="Masukkan nomor telepon"></td>
-            </tr>
-            <tr>
-                <td>Tanggal Booking</td>
-                <td><input type="date" id="bookingDate"></td>
-            </tr>
+          <tr>
+            <td>Email</td>
+            <td><input type="email" id="email" placeholder="Masukkan email"></td>
+          </tr>
+          <tr>
+            <td>Telp.</td>
+            <td><input type="tel" id="phone" placeholder="Masukkan nomor telepon"></td>
+          </tr>
+          <tr>
+            <td>Tanggal Booking</td>
+            <td><input type="date" id="bookingDate"></td>
+          </tr>
         </tbody>
-    </table>
-  </div>
-
+      </table>
+    </div>
   `;
+
   cartContent.innerHTML += formHTML;
 
   // Tombol "Bayar Sekarang" dengan fungsi onClick
   var payNowButton = document.createElement("button");
   payNowButton.textContent = "Pesan Sekarang";
   payNowButton.onclick = function () {
-  // Mendapatkan data formulir
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var phone = document.getElementById("phone").value;
-  var bookingDate = document.getElementById("bookingDate").value;
+    // Mendapatkan data formulir
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var bookingDate = document.getElementById("bookingDate").value;
 
-  // Cek apakah ada produk di keranjang
-  if (cart.length === 0) {
-    alert("Keranjang kosong. Tambahkan produk ke keranjang terlebih dahulu.");
-    return;
-  }
+    // Cek apakah ada produk di keranjang
+    if (cart.length === 0) {
+      alert("Keranjang kosong. Tambahkan produk ke keranjang terlebih dahulu.");
+      return;
+    }
 
-  // Cek apakah semua data formulir sudah diisi
-  if (!name || !email || !phone || !bookingDate) {
-    alert("Harap isi semua kolom formulir dengan benar.");
-    return;
-  }
+    // Cek apakah semua data formulir sudah diisi
+    if (!name || !email || !phone || !bookingDate) {
+      alert("Harap isi semua kolom formulir dengan benar.");
+      return;
+    }
 
-  // Data yang akan dikirim ke server
-  var bookingData = {
-    name: name,
-    email: email,
-    telepon: phone,
-    dateAt: bookingDate,
-    quantity: calculateTotalQuantity(), // Fungsi calculateTotalQuantity() untuk menghitung total jumlah produk
-    totalPrice: calculateTotal(), // Fungsi calculateTotal() untuk menghitung total harga produk
-  };
+    // Data yang akan dikirim ke server
+    var bookingData = {
+      name: name,
+      email: email,
+      telepon: phone,
+      dateAt: bookingDate,
+      quantity: calculateTotalQuantity(), // Fungsi calculateTotalQuantity() untuk menghitung total jumlah produk
+      totalPrice: calculateTotal(), // Fungsi calculateTotal() untuk menghitung total harga produk
+    };
 
-  // Menggunakan metode fetch untuk melakukan permintaan POST ke API
-  fetch("https://be-2-medan-1-production.up.railway.app/booking", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(bookingData),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      // Menanggapi respons dari server
-      if (data.success) {
-        alert("Booking berhasil! Terima kasih!");
-        // Setelah Booking berhasil, mereset keranjang atau melakukan tindakan lainnya.
-        cart = [];
-        displayCart();
-      } else {
-        alert("Booking gagal. Silakan coba lagi.");
-      }
+    // Menggunakan metode fetch untuk melakukan permintaan POST ke API
+    fetch("https://be-2-medan-1-production.up.railway.app/booking", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(bookingData),
     })
-    .catch((error) => {
-      console.error("Error making POST request:", error);
-      alert("Terjadi kesalahan. Silakan coba lagi nanti.");
-    });
+      .then((response) => response.json())
+      .then((data) => {
+        // Menanggapi respons dari server
+        if (data.success) {
+          alert("Booking berhasil! Terima kasih!");
+          // Setelah Booking berhasil, mereset keranjang atau melakukan tindakan lainnya.
+          cart = [];
+          displayCart();
+        } else {
+          alert("Booking gagal. Silakan coba lagi.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error making POST request:", error);
+        alert("Terjadi kesalahan. Silakan coba lagi nanti.");
+      });
   };
 
   // Fungsi untuk menghitung total jumlah produk di keranjang
@@ -146,26 +147,27 @@ function displayCart() {
 
 // Fungsi untuk menampilkan sidenav
 function openNav() {
-    document.getElementById("mySidenav").style.width = "360px";
-    document.getElementById("main").style.marginRight = "350px";
-    displayCart(); // Menampilkan isi keranjang saat sidenav dibuka
+  document.getElementById("mySidenav").style.width = "360px";
+  document.getElementById("main").style.marginRight = "350px";
+  displayCart(); // Menampilkan isi keranjang saat sidenav dibuka
 }
 
 // Fungsi untuk menutup sidenav
 function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginRight = "0";
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginRight = "0";
 }
 
 // Fungsi untuk membuka atau menutup sidenav sesuai kondisi
 function toggleNav() {
-    var sidenavWidth = document.getElementById("mySidenav").style.width;
-    if (sidenavWidth === "0px" || sidenavWidth === "") {
-      openNav();
-    } else {
-      closeNav();
-    }
+  var sidenavWidth = document.getElementById("mySidenav").style.width;
+  if (sidenavWidth === "0px" || sidenavWidth === "") {
+    openNav();
+  } else {
+    closeNav();
+  }
 }
+
 
 // Paket Rekomendasi Untuk ditampilkan
 document.addEventListener('DOMContentLoaded', function () {
