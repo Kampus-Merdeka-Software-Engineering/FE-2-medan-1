@@ -109,7 +109,11 @@ function displayCart() {
        alert("Harap isi semua kolom formulir dengan benar.");
        return;
      }
- 
+      // Mengumpulkan nama-nama produk di keranjang
+      var productNames = cart.map(function(product) {
+        return product.name;
+      });
+      
      // Data yang akan dikirim ke server
      var bookingData = {
        name: name,
@@ -118,7 +122,8 @@ function displayCart() {
        dateAt: bookingDate,
        quantity: calculateTotalQuantity(), // Fungsi calculateTotalQuantity() untuk menghitung total jumlah produk
        totalPrice: calculateTotal(), // Fungsi calculateTotal() untuk menghitung total harga produk
-     };
+       productNames: productNames.join(", "), // Menyatukan nama-nama produk menjadi satu string
+      };
  
      // Menggunakan metode fetch untuk melakukan permintaan POST ke API
      fetch("https://be-2-medan-1-production.up.railway.app/booking", {
