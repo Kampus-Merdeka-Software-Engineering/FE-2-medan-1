@@ -141,9 +141,7 @@ function displayCart() {
            // Setelah Booking berhasil, mereset keranjang atau melakukan tindakan lainnya.
            cart = [];
            displayCart();
-         } else {
-           alert("Booking gagal. Silakan coba lagi.");
-         }
+         } 
        })
        .catch((error) => {
          console.error("Error making POST request:", error);
