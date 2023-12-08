@@ -22,10 +22,8 @@ document.getElementById('check').addEventListener('change', function() {
 
 // header Product cart
 var cart = [];
-
-
 // Fungsi untuk menampilkan dan mengupdate isi keranjang di sidenav
-function displayCart() {
+function displayCart() {}
   var cartContent = document.getElementById("cart-content");
   cartContent.innerHTML = ""; // Membersihkan konten sebelum menambahkannya kembali
 
@@ -173,13 +171,18 @@ document.addEventListener('DOMContentLoaded', function () {
   // URL API
   const apiUrl = 'https://be-2-medan-1-production.up.railway.app/destination';
 
+  // Tangkap elemen HTML dengan id 'destinationList'
+  const destinationListElement = document.getElementById('destinationList');
+
   // Ambil data dari API
   fetch(apiUrl)
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then(data => {
-      // Tangkap elemen HTML dengan id 'destinationList'
-      const destinationListElement = document.getElementById('destinationList');
-
       // Buat elemen HTML untuk setiap destinasi
       data.forEach(destination => {
         const destinationElement = document.createElement('div');
@@ -192,7 +195,9 @@ document.addEventListener('DOMContentLoaded', function () {
             ${destination.bonus}
           </div>
           <h4 class="price">${destination.price}/Pax</h4>
-          <a class="add-to-cart" data-name="${destination.title}" data-price="${destination.price}"><i class="fa-solid fa-plane"></i></a>
+          <a class="add-to-cart" data-name="${destination.title}" data-price="${destination.price}">
+            <i class="fa-solid fa-plane"></i>
+          </a>
         `;
 
         // Tambahkan elemen destinasi ke dalam elemen dengan id 'destinationList'
