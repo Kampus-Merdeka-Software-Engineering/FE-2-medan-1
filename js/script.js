@@ -47,6 +47,16 @@ function displayCart() {
   var totalAmount = calculateTotal().toLocaleString();
   totalElement.textContent = "Total: Rp. " + totalAmount;
   cartContent.appendChild(totalElement);
+  // Fungsi untuk menghitung total jumlah produk di keranjang
+  function calculateTotalQuantity() {
+    var totalQuantity = 0;
+
+    for (var i = 0; i < cart.length; i++) {
+      totalQuantity += cart[i].quantity;
+    }
+
+    return totalQuantity;
+  }
 
   // Menambahkan formulir Nama, Email, dan Nomor Telepon di bawah total
   var formHTML = `
