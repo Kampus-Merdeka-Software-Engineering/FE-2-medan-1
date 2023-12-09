@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const destinationElement = document.createElement('div');
         destinationElement.classList.add('product-cart');
         destinationElement.innerHTML = `
-          <img src="assets/images/products/${destination.image}" alt="${destination.title}" />
+          <img src="assets/images/products/${destination.Image}" alt="${destination.title}" />
           <span>${destination.subTitle}</span>
           <h4>${destination.title}</h4>
           <div class="stars">
