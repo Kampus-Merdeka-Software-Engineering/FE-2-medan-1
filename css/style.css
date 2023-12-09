@@ -50,6 +50,7 @@ button.normal {
   border: none;
   outline: none;
   transition: 0.2s;
+  display: none;
 }
 button.normal:hover {
   background-color: #1E91B0;
@@ -105,6 +106,7 @@ i {
   button.normal {
     font-size: 12px;
     padding: 10px 20px;
+    display: none;
   }
 
   .open-btn {
@@ -634,6 +636,7 @@ span {
   border: 1px solid rgb(248, 248, 248);
   cursor: pointer;
   transition: 0.3s ease;
+  display: none;
 }
 #banners .big-banners div:hover button {
   background-color: #1E91B0;
