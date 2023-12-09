@@ -19,6 +19,9 @@ h2 {
   line-height: 54px;
   color: #8cd4f0;
 }
+h2.cartBook {
+  margin-left: 15px;
+}
 h4 {
   font-size: 20px;
   color: #222;
@@ -31,6 +34,7 @@ p {
   font-size: 16px;
   color: #222;
   margin: 15px 0 20px 0;
+  margin-left: 15px;
 }
 .section-p1 {
   padding: 40px 0;
@@ -93,6 +97,7 @@ i {
   p {
     font-size: 14px;
     margin: 10px 0 15px 0;
+    margin-left: 15px;
   }
 
   .section-p1 {
@@ -334,6 +339,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+  margin-left: 15px;
 }
 
 button:hover {
