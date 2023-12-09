@@ -248,8 +248,8 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="stars">
             ${destination.bonus}
           </div>
-          <h4 class="price">${destination.price}/Pax</h4>
-          <a class="add-to-cart" data-name="${destination.title}" data-price="${destination.price}" data-productid="product${destination.id}" onclick="addToCart('${destination.title}', ${destination.price}, 'product${destination.id}')">
+          <h4 class="price">Rp.${destination.price.toLocaleString()}/Pax</h4>
+          <a class="add-to-cart" data-name="${destination.title}" data-price="${destination.price}" data-productid="product${destination.destinationId}" onclick="addToCart('${destination.title}', ${destination.price}, 'product${destination.destinationId}')">
           <i class="fa-solid fa-plane" onclick="openNav()"></i>
           </a>
         `;
@@ -288,8 +288,8 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="stars">
             ${destination.bonus}
           </div>
-          <h4 class="price">${destination.price}/Pax</h4>
-          <a class="add-to-cart" data-name="${destination.title}" data-price="${destination.price}" data-productid="product${destination.id}" onclick="addToCart('${destination.title}', ${destination.price}, 'product${destination.id}')">
+          <h4 class="price">Rp.${destination.price.toLocaleString()}/Pax</h4>
+          <a class="add-to-cart" data-name="${destination.title}" data-price="${destination.price}" data-productid="product${destination.promoId}" onclick="addToCart('${destination.title}', ${destination.price}, 'product${destination.promoId}')">
           <i class="fa-solid fa-plane" onclick="openNav()"></i>
           </a>
         `;
