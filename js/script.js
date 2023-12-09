@@ -33,7 +33,7 @@ function displayCart() {
     var product = cart[i];
     var productItem = document.createElement("div");
     productItem.innerHTML = `
-      <p>${product.name} - Rp. ${product.price}/Pax</p>
+      <p>${product.name} - Rp. ${product.price.toLocaleString()}/Pax</p>
       <button onclick="decreaseQuantity(${i})">-</button>
       <span>${product.quantity}</span>
       <button onclick="increaseQuantity(${i})">+</button>
