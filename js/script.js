@@ -249,8 +249,8 @@ document.addEventListener('DOMContentLoaded', function () {
             ${destination.bonus}
           </div>
           <h4 class="price">${destination.price}/Pax</h4>
-          <a class="add-to-cart" data-name="${destination.title}" data-price="${destination.price}">
-            <i class="fa-solid fa-plane"></i>
+          <a class="add-to-cart" data-name="${destination.title}" data-price="${destination.price}" data-productid="product${destination.id}" onclick="addToCart('${destination.title}', ${destination.price}, 'product${destination.id}')">
+          <i class="fa-solid fa-plane" onclick="openNav()"></i>
           </a>
         `;
 
