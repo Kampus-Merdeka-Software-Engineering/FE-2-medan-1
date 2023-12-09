@@ -260,3 +260,43 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .catch(error => console.error('Error fetching data:', error));
 });
+// Paket Perjalanan Untuk ditampilkan
+document.addEventListener('DOMContentLoaded', function () {
+  // URL API
+  const apiUrl = 'https://be-2-medan-1-production.up.railway.app/promo';
+
+  // Tangkap elemen HTML dengan id 'destinationList'
+  const destinationListElement = document.getElementById('destinationList2');
+
+  // Ambil data dari API
+  fetch(apiUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Buat elemen HTML untuk setiap destinasi
+      data.forEach(destination => {
+        const destinationElement = document.createElement('div');
+        destinationElement.classList.add('product-cart');
+        destinationElement.innerHTML = `
+          <img src="assets/images/products/${destination.image}" alt="${destination.title}" />
+          <span>${destination.subTitle}</span>
+          <h4>${destination.title}</h4>
+          <div class="stars">
+            ${destination.bonus}
+          </div>
+          <h4 class="price">${destination.price}/Pax</h4>
+          <a class="add-to-cart" data-name="${destination.title}" data-price="${destination.price}" data-productid="product${destination.id}" onclick="addToCart('${destination.title}', ${destination.price}, 'product${destination.id}')">
+          <i class="fa-solid fa-plane" onclick="openNav()"></i>
+          </a>
+        `;
+
+        // Tambahkan elemen destinasi ke dalam elemen dengan id 'destinationList'
+        destinationListElement.appendChild(destinationElement);
+      });
+    })
+    .catch(error => console.error('Error fetching data:', error));
+});
