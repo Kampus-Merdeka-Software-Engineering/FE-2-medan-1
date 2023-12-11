@@ -3,6 +3,13 @@ const emailField = document.getElementById("email-address-input");
 emailField.focus({
   preventScroll: true,
 });
+function showPopupNewsletter() {
+  document.getElementById('popup-container').style.display = 'block';
+}
+
+function closePopupNewsletter() {
+  document.getElementById('popup-container').style.display = 'none';
+}
 // floating responsive Product cart
 function toggleNavResponsive() {
   var sidenavWidth = document.getElementById("mySidenav").style.width;
@@ -137,12 +144,12 @@ function displayCart() {
        .then((data) => {
          // Menanggapi respons dari server
          if (data.success) {
-           alert("Booking berhasil! Terima kasih!");
+          showNotification("Booking berhasil! Terima kasih!");
            // Setelah Booking berhasil, mereset keranjang atau melakukan tindakan lainnya.
            cart = [];
            displayCart();
          } else {
-           alert("Booking berhasil! Terima kasih!.");
+          showNotification("Booking berhasil! Terima kasih!.");
          }
        })
        .catch((error) => {
