@@ -3,11 +3,11 @@ const emailField = document.getElementById("email-address-input");
 emailField.focus({
   preventScroll: true,
 });
-function showPopupNewsletter() {
+function showPopup() {
   document.getElementById('popup-container').style.display = 'block';
 }
 
-function closePopupNewsletter() {
+function closePopup() {
   document.getElementById('popup-container').style.display = 'none';
 }
 // floating responsive Product cart
