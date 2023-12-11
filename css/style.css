@@ -916,12 +916,12 @@ span {
 .heading-text {
   font-size: 48px;
   line-height: 50px;
-  font-weight: 900;
+  font-weight: bold;
   display: flex;
   flex-direction: column;
   margin-top: 0px;
   margin-right: 0px;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   margin-left: 0px;
   padding-top: 0px;
   padding-right: 0px;
@@ -1296,7 +1296,8 @@ font-size: 18px;
 color: #999;
 }
 .custom-modal .content .message-type {
-font-size: 24px;
+font-size: 47px;
+font-weight: bold;
 color: #000;
 }
 .custom-modal .icon-top {
@@ -1313,12 +1314,12 @@ text-align: center;
 }
 @keyframes succes-pulse { 
 0% {
-  box-shadow: 0px 0px 30px 20px rgba(75, 181, 67, .2);
+  box-shadow: 0px 0px 30px 20px rgba(58, 112, 163, 0.2);
 }
 50% {
-  box-shadow: 0px 0px 30px 20px rgba(75, 181, 67, .4);
+  box-shadow: 0px 0px 30px 20px rgba(0, 0, 0, 0.4);
 }
 100% {
-  box-shadow: 0px 0px 30px 20px rgba(75, 181, 67, .2);
+  box-shadow: 0px 0px 30px 20px rgba(58, 112, 163, 0.2);
 }
 }
