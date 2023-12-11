@@ -144,12 +144,12 @@ function displayCart() {
        .then((data) => {
          // Menanggapi respons dari server
          if (data.success) {
-          showNotification("Booking berhasil! Terima kasih!");
+          showPopup();
            // Setelah Booking berhasil, mereset keranjang atau melakukan tindakan lainnya.
            cart = [];
            displayCart();
          } else {
-          showNotification("Booking berhasil! Terima kasih!.");
+          showPopup();
          }
        })
        .catch((error) => {
