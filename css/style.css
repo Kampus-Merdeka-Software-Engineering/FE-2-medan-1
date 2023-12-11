@@ -1268,6 +1268,7 @@ span {
   right: 20px;
   font-size: 40px;
   cursor: pointer;
+  color: #000;
 }
 .succes {
 background-color: #1E91B0;
