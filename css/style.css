@@ -744,7 +744,7 @@ span {
 
 #newsletter {
   background-image: url(../assets/images/banner/b14.png);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: 180px;
   background-color: #041e42;
   height: 160px;
@@ -752,6 +752,9 @@ span {
   align-items: center;
   justify-content: space-between;
   padding: 0 75px;
+}
+#newsletter .newsletter-text {
+  margin-right: 20px; 
 }
 #newsletter .newsletter-text h3 {
   color: white;
@@ -793,7 +796,7 @@ span {
 @media screen and (max-width: 768px) {
   #newsletter {
     background-image: url(../assets/images/banner/b14.png);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: center; 
     background-color: #041e42;
     height: auto; 
