@@ -152,6 +152,17 @@ function displayCart() {
   };
   cartContent.appendChild(payNowButton);
 }
+function showNotification(message) {
+  var notification = document.getElementById("bookingNotification");
+  var notificationMessage = document.getElementById("notificationMessage");
+
+  notificationMessage.innerText = message;
+  notification.classList.add("show");
+
+  setTimeout(function () {
+    notification.classList.remove("show");
+  }, 3000); // Hapus notifikasi setelah 3 detik
+}
 // Fungsi untuk menambahkan produk ke dalam keranjang
 function addToCart(name, price, productId) {
   // Cek apakah produk sudah ada di keranjang
