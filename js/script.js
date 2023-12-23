@@ -131,7 +131,7 @@ function displayCart() {
     };
 
     // Menggunakan metode fetch untuk melakukan permintaan POST ke API
-    fetch("https://be-2-medan-1-production.up.railway.app/booking", {
+    fetch("https://wild-pink-frog-slip.cyclic.app/booking", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -239,7 +239,7 @@ function toggleNav() {
 // Paket Rekomendasi Untuk ditampilkan
 document.addEventListener("DOMContentLoaded", function () {
   // URL API
-  const apiUrl = "https://be-2-medan-1-production.up.railway.app/destination";
+  const apiUrl = "https://wild-pink-frog-slip.cyclic.app/destination";
 
   // Tangkap elemen HTML dengan id 'destinationList'
   const destinationListElement = document.getElementById("destinationList");
@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Paket Perjalanan Untuk ditampilkan
 document.addEventListener("DOMContentLoaded", function () {
   // URL API
-  const apiUrl = "https://be-2-medan-1-production.up.railway.app/promo";
+  const apiUrl = "https://wild-pink-frog-slip.cyclic.app/promo";
 
   // Tangkap elemen HTML dengan id 'destinationList'
   const destinationListElement = document.getElementById("destinationList2");
