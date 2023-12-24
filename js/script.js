@@ -131,7 +131,7 @@ function displayCart() {
     };
 
     // Menggunakan metode fetch untuk melakukan permintaan POST ke API
-    fetch("https://wild-pink-frog-slip.cyclic.app/booking", {
+    fetch("https://sukatripasia.cyclic.app/booking", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -239,7 +239,7 @@ function toggleNav() {
 // Paket Rekomendasi Untuk ditampilkan
 document.addEventListener("DOMContentLoaded", function () {
   // URL API
-  const apiUrl = "https://wild-pink-frog-slip.cyclic.app/destination";
+  const apiUrl = "https://sukatripasia.cyclic.app/destination";
 
   // Tangkap elemen HTML dengan id 'destinationList'
   const destinationListElement = document.getElementById("destinationList");
@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Paket Perjalanan Untuk ditampilkan
 document.addEventListener("DOMContentLoaded", function () {
   // URL API
-  const apiUrl = "https://wild-pink-frog-slip.cyclic.app/promo";
+  const apiUrl = "https://sukatripasia.cyclic.app/promo";
 
   // Tangkap elemen HTML dengan id 'destinationList'
   const destinationListElement = document.getElementById("destinationList2");
