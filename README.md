@@ -10,7 +10,7 @@ Suka Trip Asia is a company that operates in the tourism industry and provides v
 - CSS
 - JavaScript
 - Node.js (gunakan Node Mailer untuk Gmail)
-- API Railway
+- API Cyclic
 
 ## 🌐 Link Suka Trip Asia Final Project
 [https://kampus-merdeka-software-engineering.github.io/FE-2-medan-1/](https://kampus-merdeka-software-engineering.github.io/FE-2-medan-1/)
